@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notaría Ejemplo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Futuro CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-body">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <img src="LOGO NOTARIA FUTRONO.png" alt="Logo Notaría" class="logo-image">
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <nav class="main-navigation" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#tramites" class="nav-link">Trámites</a></li>
+                    <li><a href="#tarifas" class="nav-link">Tarifas</a></li>
+                    <li><a href="#personal" class="nav-link">Personal</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+        <nav id="mainNav" class="main-navigation">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#tramites" class="nav-link">Trámites</a></li>
+                <li class="nav-item"><a href="#tarifas" class="nav-link">Tarifas</a></li>
+                <li class="nav-item"><a href="#personal" class="nav-link">Personal</a></li>
+                <li class="nav-item"><a href="#transparencia" class="nav-link">Transparencia</a></li>
+                <li class="nav-item"><a href="#indices" class="nav-link">Índices</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="Carrusel/1.jpg" alt="Oficina Notarial">
+                <div class="carousel-caption">
+                    <h2>Servicio Digital Seguro</h2>
+                    <p>Modernización y transparencia al servicio de la comunidad</p>
+                    <a href="#tramites" class="hero-button">Ver Trámites</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <img src="Carrusel/2.jpg" alt="Atención al público">
+                <div class="carousel-caption">
+                    <h2>Atención Profesional</h2>
+                    <p>Compromiso, precisión y respaldo jurídico</p>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <img src="Carrusel/3.jpg" alt="Documentos legales">
+                <div class="carousel-caption">
+                    <h2>Transparencia y Acceso</h2>
+                    <p>Consulta índices y servicios en línea</p>
+                </div>
+            </div>
+
+            <button class="carousel-prev">‹</button>
+            <button class="carousel-next">›</button>
+        </div>
+    </section>
+
+    <!-- ================= MAIN ================= -->
+    <main class="site-main">
+
+        <div class="content-wrapper">
+
+        <!-- Sección Trámites -->
+        <section id="tramites" class="section section-tramites">
+            <h2 class="section-title">Trámites y Requisitos</h2>
+
+            <div class="tramite-item">
+                <h3 class="tramite-title">Escritura Pública</h3>
+                <p class="tramite-description">Descripción breve del trámite.</p>
+                <ul class="tramite-requirements">
+                    <li class="requirement-item">Cédula de identidad vigente</li>
+                    <li class="requirement-item">Documentación asociada</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- Sección Tarifas -->
+        <section id="tarifas" class="section section-tarifas">
+            <h2 class="section-title">Tarifas por Trámite</h2>
+
+            <table class="tariff-table">
+                <thead class="table-head">
+                    <tr class="table-row">
+                        <th class="table-header">Trámite</th>
+                        <th class="table-header">Valor</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="table-row">
+                        <td class="table-data">Escritura Pública</td>
+                        <td class="table-data">$XX.XXX</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Sección Personal -->
+        <section id="personal" class="section section-personal">
+            <h2 class="section-title">Personal y Suplentes</h2>
+
+            <div class="staff-member">
+                <h3 class="staff-name">Nombre Notario Titular</h3>
+                <p class="staff-role">Notario Titular</p>
+            </div>
+
+            <div class="staff-member">
+                <h3 class="staff-name">Nombre Suplente</h3>
+                <p class="staff-role">Notario Suplente</p>
+            </div>
+        </section>
+
+
+        <!-- Sección Transparencia -->
+        <section id="transparencia" class="section section-transparency">
+            <h2 class="section-title">Transparencia</h2>
+
+            <ul class="transparency-list">
+                <li class="transparency-item">
+                    <a href="#" class="transparency-link">Remuneraciones</a>
+                </li>
+                <li class="transparency-item">
+                    <a href="#" class="transparency-link">Balances</a>
+                </li>
+                <li class="transparency-item">
+                    <a href="#" class="transparency-link">Declaraciones de Interés y Patrimonio</a>
+                </li>
+                <li class="transparency-item">
+                    <a href="#" class="transparency-link">Últimos 3 Informes de Fiscalía</a>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- Sección Índices -->
+        <section id="indices" class="section section-indices">
+            <h2 class="section-title">Índices</h2>
+
+            <div class="indices-search">
+                <form class="indices-form">
+                    <label for="search" class="form-label">Buscar en índices:</label>
+                    <input type="text" id="search" class="form-input" placeholder="Ingrese nombre o número">
+                    <button type="submit" class="form-button">Buscar</button>
+                </form>
+            </div>
+        </section>
+
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section section-contact">
+            <h2 class="section-title">Consultas, Reclamos y Sugerencias</h2>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="email" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" class="form-textarea"></textarea>
+                </div>
+
+                <button type="submit" class="form-button">Enviar</button>
+            </form>
+        </section>
+        </div>
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Notaría Ejemplo - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+
+    <script>
+        const slides = document.querySelectorAll(".carousel-slide");
+        const next = document.querySelector(".carousel-next");
+        const prev = document.querySelector(".carousel-prev");
+
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        next.addEventListener("click", () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+
+        prev.addEventListener("click", () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }, 6000);
+    </script>
+
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.getElementById("mainNav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>
