@@ -22,15 +22,35 @@
             <img src="LOGO NOTARIA FUTRONO.png" alt="Logo Notaría" class="logo-image">
 
             <button class="menu-toggle" aria-label="Abrir menú">
-                ☰
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
 
             <nav class="main-navigation" id="mainNav">
                 <ul class="nav-list">
-                    <li><a href="#tramites" class="nav-link">Trámites</a></li>
-                    <li><a href="#tarifas" class="nav-link">Tarifas</a></li>
-                    <li><a href="#personal" class="nav-link">Personal</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+
+                    <li class="nav-item">
+                        <a href="#tramites" class="nav-link">Trámites</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Nuestra Notaría
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#personal">Personal</a></li>
+                            <li><a href="#tarifas">Tarifas</a></li>
+                            <li><a href="#transparencia">Transparencia</a></li>
+                            <li><a href="#indices">Índices</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+
                 </ul>
             </nav>
 
@@ -97,6 +117,33 @@
                     <li class="requirement-item">Cédula de identidad vigente</li>
                     <li class="requirement-item">Documentación asociada</li>
                 </ul>
+            </div>
+
+        </section>
+
+        <section id="preguntas" class="section section-faq">
+            <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué documentos necesito para una escritura pública?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Debe presentar su cédula vigente y la documentación asociada al trámite específico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo realizar trámites en línea?
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Algunos trámites pueden iniciarse digitalmente, pero pueden requerir firma presencial.
+                    </p>
+                </div>
             </div>
 
         </section>
@@ -176,26 +223,68 @@
 
         <!-- Sección Contacto -->
         <section id="contacto" class="section section-contact">
-            <h2 class="section-title">Consultas, Reclamos y Sugerencias</h2>
 
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" id="name" class="form-input">
+            <h2 class="section-title">Contacto</h2>
+
+            <div class="contact-grid">
+
+                <!-- Columna 1: Información -->
+                <div class="contact-info">
+
+                    <h3>Dirección</h3>
+                    <p>Av. Ejemplo 123, Futrono, Chile</p>
+
+                    <h3>Teléfono</h3>
+                    <p>+56 9 1234 5678</p>
+
+                    <h3>Correo Electrónico</h3>
+                    <p>contacto@notariaejemplo.cl</p>
+
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes a Viernes<br>09:00 - 14:00 hrs</p>
+
                 </div>
 
-                <div class="form-group">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" id="email" class="form-input">
+                <!-- Columna 2: Formulario -->
+                <div class="contact-form-wrapper">
+
+                    <form class="contact-form">
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="email" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" class="form-textarea"></textarea>
+                        </div>
+
+                        <button type="submit" class="form-button">Enviar Consulta</button>
+
+                    </form>
+
                 </div>
 
-                <div class="form-group">
-                    <label for="message" class="form-label">Mensaje</label>
-                    <textarea id="message" class="form-textarea"></textarea>
-                </div>
+            </div>
 
-                <button type="submit" class="form-button">Enviar</button>
-            </form>
+            <!-- Mapa debajo (opcional más institucional) -->
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps?q=Futrono,Chile&output=embed"
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
         </section>
         </div>
     </main>
@@ -243,8 +332,32 @@
 
         toggle.addEventListener("click", () => {
             nav.classList.toggle("active");
+            toggle.classList.toggle("active");
         });
     </script>
 
+    <script>
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdown = document.querySelector(".dropdown");
+
+        dropdownToggle.addEventListener("click", (e) => {
+            if (window.innerWidth < 900) {
+                e.preventDefault();
+                dropdown.classList.toggle("active");
+            }
+        });
+    </script>
+
+    <script>
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(item => {
+            const question = item.querySelector(".faq-question");
+
+            question.addEventListener("click", () => {
+                item.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>

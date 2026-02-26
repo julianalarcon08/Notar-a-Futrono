@@ -22,7 +22,6 @@ body {
     color: var(--color-text);
 }
 
-/* HEADER */
 /* ===============================
    HEADER BASE (mobile first)
 ================================= */
@@ -62,7 +61,7 @@ body {
 }
 
 /* ===============================
-   NAV MOBILE
+   NAV MOBILE (ACORDEÓN)
 ================================= */
 
 .main-navigation {
@@ -71,12 +70,15 @@ body {
     left: 0;
     width: 100%;
     background: #2f5d73;
-    display: none;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
     z-index: 1100;
 }
 
 .main-navigation.active {
-    display: block;
+    max-height: 1000px;
 }
 
 .nav-list {
@@ -100,20 +102,56 @@ body {
 }
 
 /* ===============================
+   DROPDOWN (ACORDEÓN)
+================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+    margin-top: 8px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+/* Activación en móvil */
+.dropdown.active .dropdown-menu {
+    max-height: 500px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ===============================
    DESKTOP
 ================================= */
 
 @media (min-width: 900px) {
 
     .menu-toggle {
-        display: none; /* ocultar hamburguesa en PC */
+        display: none;
     }
 
     .main-navigation {
         position: static;
-        display: block !important;
         background: transparent;
         width: auto;
+
+        max-height: none;
+        overflow: visible;
     }
 
     .nav-list {
@@ -122,9 +160,43 @@ body {
         gap: 25px;
     }
 
+    /* Dropdown desktop animado */
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--color-white);
+        min-width: 220px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        border-radius: 10px;
+        padding: 0;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        z-index: 2000;
+    }
+
+    .dropdown-menu li a {
+        padding: 10px 20px;
+        color: var(--color-text);
+    }
+
+    .dropdown-menu li a:hover {
+        background: var(--color-primary-light);
+        color: var(--color-primary-dark);
+    }
+
+    .dropdown:hover .dropdown-menu {
+        max-height: 500px;
+    }
 }
 
-/* HERO CAROUSEL */
+/* ===============================
+   HERO CAROUSEL
+================================= */
+
 .hero-carousel {
     position: relative;
     width: 100%;
@@ -203,7 +275,10 @@ img {
 .carousel-prev { left: 15px; }
 .carousel-next { right: 15px; }
 
-/* MAIN WRAPPER */
+/* ===============================
+   MAIN WRAPPER
+================================= */
+
 .site-main {
     padding: 60px 20px;
 }
@@ -214,7 +289,10 @@ img {
     padding: 0 20px;
 }
 
-/* SECTIONS */
+/* ===============================
+   SECTIONS
+================================= */
+
 .section {
     background: white;
     padding: 40px;
@@ -237,7 +315,10 @@ img {
     padding-bottom: 8px;
 }
 
-/* BUTTONS */
+/* ===============================
+   BUTTONS
+================================= */
+
 .form-button {
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     color: white;
@@ -253,7 +334,10 @@ img {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+================================= */
+
 .site-footer {
     background: var(--color-primary-dark);
     color: white;
@@ -262,7 +346,10 @@ img {
     margin-top: 60px;
 }
 
-/* RESPONSIVE */
+/* ===============================
+   RESPONSIVE
+================================= */
+
 @media (max-width: 768px) {
 
     .carousel-caption h2 {
@@ -271,6 +358,221 @@ img {
 
     .section {
         padding: 25px;
+    }
+
+        .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 3px;
+        transition: all 0.35s ease;
+    }
+
+    /* Estado activo (cuando el menú está abierto) */
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+}
+
+/* ===============================
+   FAQ SECTION
+================================= */
+
+.section-faq {
+    background: var(--color-white);
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.faq-title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: var(--color-primary-light);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* FAQ ITEMS */
+
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 0;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--color-primary);
+}
+
+/* Icono + */
+
+.faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotación cuando está activo */
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+/* RESPUESTA (acordeón animado) */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+    padding: 10px 0 15px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estado activo */
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+/* ===============================
+   CONTACT SECTION
+================================= */
+
+.section-contact {
+    background: var(--color-white);
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-info h3 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* FORM */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(47,93,115,0.15);
+}
+
+/* MAPA */
+
+.contact-map iframe {
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   DESKTOP CONTACT
+================================= */
+
+@media (min-width: 900px) {
+
+    .contact-grid {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        flex: 1;
+    }
+
+    .contact-form-wrapper {
+        flex: 1;
     }
 
 }
