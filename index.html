@@ -71,29 +71,33 @@
 
     <section class="hero-carousel">
         <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="Carrusel/1.jpg" alt="Oficina Notarial">
-                <div class="carousel-caption">
-                    <h2>Servicio Digital Seguro</h2>
-                    <p>Modernización y transparencia al servicio de la comunidad</p>
-                    <a href="#tramites" class="hero-button">Ver Trámites</a>
-                </div>
-            </div>
+            <div class="carousel-track">
 
-            <div class="carousel-slide">
-                <img src="Carrusel/2.jpg" alt="Atención al público">
-                <div class="carousel-caption">
-                    <h2>Atención Profesional</h2>
-                    <p>Compromiso, precisión y respaldo jurídico</p>
+                <div class="carousel-slide">
+                    <img src="Carrusel/1.jpg" alt="Oficina Notarial">
+                    <div class="carousel-caption">
+                        <h2>Servicio Digital Seguro</h2>
+                        <p>Modernización y transparencia al servicio de la comunidad</p>
+                        <a href="#tramites" class="hero-button">Ver Trámites</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="carousel-slide">
-                <img src="Carrusel/3.jpg" alt="Documentos legales">
-                <div class="carousel-caption">
-                    <h2>Transparencia y Acceso</h2>
-                    <p>Consulta índices y servicios en línea</p>
+                <div class="carousel-slide">
+                    <img src="Carrusel/2.jpg" alt="Atención al público">
+                    <div class="carousel-caption">
+                        <h2>Atención Profesional</h2>
+                        <p>Compromiso, precisión y respaldo jurídico</p>
+                    </div>
                 </div>
+
+                <div class="carousel-slide">
+                    <img src="Carrusel/3.jpg" alt="Documentos legales">
+                    <div class="carousel-caption">
+                        <h2>Transparencia y Acceso</h2>
+                        <p>Consulta índices y servicios en línea</p>
+                    </div>
+                </div>
+
             </div>
 
             <button class="carousel-prev">‹</button>
@@ -121,6 +125,7 @@
 
         </section>
 
+        <!-- Sección Preguntas Frecuentes-->
         <section id="preguntas" class="section section-faq">
             <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
 
@@ -148,78 +153,35 @@
 
         </section>
 
+        <!-- Imagenes Links-->
+        <section class="section section-links">
+            <div class="image-links-grid">
 
-        <!-- Sección Tarifas -->
-        <section id="tarifas" class="section section-tarifas">
-            <h2 class="section-title">Tarifas por Trámite</h2>
+                <a href="#tramites" class="image-card">
+                    <img src="Carrusel/1.jpg" alt="Trámites">
+                    <div class="overlay">
+                        <h3>Trámites</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
 
-            <table class="tariff-table">
-                <thead class="table-head">
-                    <tr class="table-row">
-                        <th class="table-header">Trámite</th>
-                        <th class="table-header">Valor</th>
-                    </tr>
-                </thead>
-                <tbody class="table-body">
-                    <tr class="table-row">
-                        <td class="table-data">Escritura Pública</td>
-                        <td class="table-data">$XX.XXX</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                <a href="#tarifas" class="image-card">
+                    <img src="Carrusel/2.jpg" alt="Tarifas">
+                    <div class="overlay">
+                        <h3>Tarifas</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
 
-
-        <!-- Sección Personal -->
-        <section id="personal" class="section section-personal">
-            <h2 class="section-title">Personal y Suplentes</h2>
-
-            <div class="staff-member">
-                <h3 class="staff-name">Nombre Notario Titular</h3>
-                <p class="staff-role">Notario Titular</p>
-            </div>
-
-            <div class="staff-member">
-                <h3 class="staff-name">Nombre Suplente</h3>
-                <p class="staff-role">Notario Suplente</p>
+                <a href="#indices" class="image-card">
+                    <img src="Carrusel/3.jpg" alt="Índices">
+                    <div class="overlay">
+                        <h3>Índices</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
             </div>
         </section>
-
-
-        <!-- Sección Transparencia -->
-        <section id="transparencia" class="section section-transparency">
-            <h2 class="section-title">Transparencia</h2>
-
-            <ul class="transparency-list">
-                <li class="transparency-item">
-                    <a href="#" class="transparency-link">Remuneraciones</a>
-                </li>
-                <li class="transparency-item">
-                    <a href="#" class="transparency-link">Balances</a>
-                </li>
-                <li class="transparency-item">
-                    <a href="#" class="transparency-link">Declaraciones de Interés y Patrimonio</a>
-                </li>
-                <li class="transparency-item">
-                    <a href="#" class="transparency-link">Últimos 3 Informes de Fiscalía</a>
-                </li>
-            </ul>
-        </section>
-
-
-        <!-- Sección Índices -->
-        <section id="indices" class="section section-indices">
-            <h2 class="section-title">Índices</h2>
-
-            <div class="indices-search">
-                <form class="indices-form">
-                    <label for="search" class="form-label">Buscar en índices:</label>
-                    <input type="text" id="search" class="form-input" placeholder="Ingrese nombre o número">
-                    <button type="submit" class="form-button">Buscar</button>
-                </form>
-            </div>
-        </section>
-
 
         <!-- Sección Contacto -->
         <section id="contacto" class="section section-contact">
@@ -299,31 +261,66 @@
 
 
     <script>
+        const track = document.querySelector(".carousel-track");
         const slides = document.querySelectorAll(".carousel-slide");
-        const next = document.querySelector(".carousel-next");
-        const prev = document.querySelector(".carousel-prev");
+        const nextBtn = document.querySelector(".carousel-next");
+        const prevBtn = document.querySelector(".carousel-prev");
 
-        let current = 0;
+        let currentIndex = 0;
 
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove("active"));
-            slides[index].classList.add("active");
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        next.addEventListener("click", () => {
-            current = (current + 1) % slides.length;
-            showSlide(current);
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
         });
 
-        prev.addEventListener("click", () => {
-            current = (current - 1 + slides.length) % slides.length;
-            showSlide(current);
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
         });
 
+        // Auto slide
         setInterval(() => {
-            current = (current + 1) % slides.length;
-            showSlide(current);
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
         }, 6000);
+
+        /* ======================
+        Swipe móvil
+        ====================== */
+
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        track.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            const moveX = e.touches[0].clientX;
+            const diff = startX - moveX;
+
+            if (diff > 50) {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+                isDragging = false;
+            }
+
+            if (diff < -50) {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+                isDragging = false;
+            }
+        });
+
+        track.addEventListener("touchend", () => {
+            isDragging = false;
+        });
     </script>
 
     <script>
