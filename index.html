@@ -5,12 +5,11 @@
     <title>Notaría Ejemplo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Futuro CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
 </head>
 
 <body class="site-body">
@@ -56,51 +55,39 @@
         </div>
     </header>
 
-        <nav id="mainNav" class="main-navigation">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#tramites" class="nav-link">Trámites</a></li>
-                <li class="nav-item"><a href="#tarifas" class="nav-link">Tarifas</a></li>
-                <li class="nav-item"><a href="#personal" class="nav-link">Personal</a></li>
-                <li class="nav-item"><a href="#transparencia" class="nav-link">Transparencia</a></li>
-                <li class="nav-item"><a href="#indices" class="nav-link">Índices</a></li>
-                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero-carousel">
-        <div class="carousel-container">
-            <div class="carousel-track">
-
-                <div class="carousel-slide">
-                    <img src="Carrusel/1.jpg" alt="Oficina Notarial">
-                    <div class="carousel-caption">
-                        <h2>Servicio Digital Seguro</h2>
-                        <p>Modernización y transparencia al servicio de la comunidad</p>
-                        <a href="#tramites" class="hero-button">Ver Trámites</a>
-                    </div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="Carrusel/2.jpg" alt="Atención al público">
-                    <div class="carousel-caption">
-                        <h2>Atención Profesional</h2>
-                        <p>Compromiso, precisión y respaldo jurídico</p>
-                    </div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="Carrusel/3.jpg" alt="Documentos legales">
-                    <div class="carousel-caption">
-                        <h2>Transparencia y Acceso</h2>
-                        <p>Consulta índices y servicios en línea</p>
-                    </div>
-                </div>
-
+    <section class="hero-section">
+        <div class="hero-container">
+            <img src="Carrusel/LOGO NOTARÍA FUTRONO.svg" alt="Logo Notaría" class="logo-image-hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Bienvenidos a Notaría Futrono</h1>
+                <p class="hero-subtitle">Servicio profesional, seguro y cercano.</p>
             </div>
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <strong>Teléfono:</strong>
+                    <span>+56 9 1234 5678</span>
+                </div>
 
-            <button class="carousel-prev">‹</button>
-            <button class="carousel-next">›</button>
+                <div class="hero-info-item">
+                    <strong>Email:</strong>
+                    <span>contacto@notaria.cl</span>
+                </div>
+
+                <div class="hero-info-item">
+                    <strong>Dirección:</strong>
+                    <span>Av. Principal 123, Ciudad</span>
+                </div>
+
+                <div class="hero-info-item">
+                    <strong>Horario:</strong>
+                    <span>Lunes a Viernes 09:00 – 17:00</span>
+                </div>
+
+                <div class="hero-info-item">
+                    <strong>Notaria:</strong>
+                    <span>Gisele Henríquez</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -109,19 +96,34 @@
 
         <div class="content-wrapper">
 
-        <!-- Sección Trámites -->
-        <section id="tramites" class="section section-tramites">
-            <h2 class="section-title">Trámites y Requisitos</h2>
+        <!-- Imágenes Links -->
+        <section class="section section-links">
+            <div class="image-links-grid">
 
-            <div class="tramite-item">
-                <h3 class="tramite-title">Escritura Pública</h3>
-                <p class="tramite-description">Descripción breve del trámite.</p>
-                <ul class="tramite-requirements">
-                    <li class="requirement-item">Cédula de identidad vigente</li>
-                    <li class="requirement-item">Documentación asociada</li>
-                </ul>
+                <a href="#tramites" class="image-card">
+                    <img src="Carrusel/1.jpg" alt="Trámites">
+                    <div class="overlay">
+                        <h3>Trámites</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
+
+                <a href="#tarifas" class="image-card">
+                    <img src="Carrusel/2.jpg" alt="Tarifas">
+                    <div class="overlay">
+                        <h3>Tarifas</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
+
+                <a href="#indices" class="image-card">
+                    <img src="Carrusel/3.jpg" alt="Índices">
+                    <div class="overlay">
+                        <h3>Índices</h3>
+                        <span class="overlay-button">Saber más</span>
+                    </div>
+                </a>
             </div>
-
         </section>
 
         <!-- Sección Preguntas Frecuentes-->
@@ -152,36 +154,6 @@
 
         </section>
 
-        <!-- Imagenes Links-->
-        <section class="section section-links">
-            <div class="image-links-grid">
-
-                <a href="#tramites" class="image-card">
-                    <img src="Carrusel/1.jpg" alt="Trámites">
-                    <div class="overlay">
-                        <h3>Trámites</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-
-                <a href="#tarifas" class="image-card">
-                    <img src="Carrusel/2.jpg" alt="Tarifas">
-                    <div class="overlay">
-                        <h3>Tarifas</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-
-                <a href="#indices" class="image-card">
-                    <img src="Carrusel/3.jpg" alt="Índices">
-                    <div class="overlay">
-                        <h3>Índices</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
         <!-- Sección Contacto -->
         <section id="contacto" class="section section-contact">
 
@@ -209,24 +181,58 @@
                 <!-- Columna 2: Formulario -->
                 <div class="contact-form-wrapper">
 
-                    <form class="contact-form">
+                    <form 
+                        class="contact-form" 
+                        action="https://formspree.io/f/xvzbejqe" 
+                        method="POST"
+                    >
+
+                        <!-- Asunto personalizado -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web Notaría">
+
+                        <!-- Redirección opcional después de enviar -->
+                        <!-- <input type="hidden" name="_next" value="https://tusitio.cl/gracias.html"> -->
+
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_honey" style="display:none">
 
                         <div class="form-group">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" id="name" class="form-input">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="nombre"
+                                class="form-input"
+                                required
+                                autocomplete="name"
+                            >
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" id="email" class="form-input">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                class="form-input"
+                                required
+                                autocomplete="email"
+                            >
                         </div>
 
                         <div class="form-group">
                             <label for="message" class="form-label">Mensaje</label>
-                            <textarea id="message" class="form-textarea"></textarea>
+                            <textarea 
+                                id="message" 
+                                name="mensaje"
+                                class="form-textarea"
+                                required
+                            ></textarea>
                         </div>
 
-                        <button type="submit" class="form-button">Enviar Consulta</button>
+                        <button type="submit" class="form-button">
+                            Enviar Consulta
+                        </button>
 
                     </form>
 
@@ -257,70 +263,6 @@
             <p class="footer-text">© 2026 Notaría Ejemplo - Todos los derechos reservados</p>
         </div>
     </footer>
-
-
-    <script>
-        const track = document.querySelector(".carousel-track");
-        const slides = document.querySelectorAll(".carousel-slide");
-        const nextBtn = document.querySelector(".carousel-next");
-        const prevBtn = document.querySelector(".carousel-prev");
-
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        nextBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel();
-        });
-
-        prevBtn.addEventListener("click", () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateCarousel();
-        });
-
-        // Auto slide
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateCarousel();
-        }, 6000);
-
-        /* ======================
-        Swipe móvil
-        ====================== */
-
-        let startX = 0;
-        let isDragging = false;
-
-        track.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        });
-
-        track.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
-            const moveX = e.touches[0].clientX;
-            const diff = startX - moveX;
-
-            if (diff > 50) {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateCarousel();
-                isDragging = false;
-            }
-
-            if (diff < -50) {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateCarousel();
-                isDragging = false;
-            }
-        });
-
-        track.addEventListener("touchend", () => {
-            isDragging = false;
-        });
-    </script>
 
     <script>
         const toggle = document.querySelector(".menu-toggle");
