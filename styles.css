@@ -735,3 +735,60 @@ h2{
     }
 
 }
+
+.tramites-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.tramite-card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 20px;
+    background: var(--color-white);
+    transition: 0.3s;
+}
+
+.tramite-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.tramite-card h3 {
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.tramite-card ul {
+    margin: 13px 0;
+    padding-left: 18px;
+    color: var(--color-text-light);
+}
+.tramite-card li {
+    margin: 5px 0;
+    
+    color: var(--color-text-light);
+}
+
+.tramites-search {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.tramites-search input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font-family: inherit;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.tramites-search input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(101, 119, 159, 0.25);
+}

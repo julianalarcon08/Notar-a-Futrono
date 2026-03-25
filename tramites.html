@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notaría Ejemplo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-body">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="header-inner">
+            <img src="Carrusel/LOGO NOTARÍA FUTRONO.svg" alt="Logo Notaría" class="logo-image">
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-navigation" id="mainNav">
+                <ul class="nav-list">
+
+                    <li class="nav-item">
+                        <a href="#tramites" class="nav-link">Trámites</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Nuestra Notaría
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#personal">Personal</a></li>
+                            <li><a href="#tarifas">Tarifas</a></li>
+                            <li><a href="#transparencia">Transparencia</a></li>
+                            <li><a href="#indices">Índices</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="site-main">
+        <div class="content-wrapper">
+
+            <!-- INTRO -->
+            <section class="section">
+                <h1 class="section-title">Trámites Notariales</h1>
+                <p>
+                    Revise los trámites disponibles y los requisitos necesarios para cada uno.
+                </p>
+            </section>
+            
+            <section class="tramites-search">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Buscar trámite (ej: poder, arriendo, viaje...)"
+                >
+            </section>
+
+            <!-- ================= DOCUMENTOS PRIVADOS ================= -->
+            <section class="section">
+                <h2 class="section-title">Documentos Privados</h2>
+
+                <div class="tramites-grid">
+
+                    <div class="tramite-card">
+                        <h3>AUTORIZACIÓN SALIDA DEL PAÍS VEHÍCULOS</h3>
+                        <p>Documento mediante el cual el propietario de un vehículo autoriza a un tercero a sacarlo del país de manera temporal.</p>
+                        <ul>
+                            <li>Cédula de identidad del propietario.</li>
+                            <li>Certificado de Anotaciones Vigentes con fecha del mismo día en que vine a firmar (solicitar en Registro Civil o registrocivil.cl).</li>
+                            <li>Datos de la persona que saldrá del país con el vehículo.</li>
+                        </ul>
+                        <p>Este documento se emite exclusivamente con firma electrónica y será enviado únicamente en formato digital. Para su envío, se deben proporcionar dos direcciones de correo electrónico.</p>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>AUTORIZACIÓN SALIDA DEL PAÍS MENOR</h3>
+                        <p>Autorización otorgada por uno o ambos padres para que un menor de edad pueda viajar fuera del país.</p>
+                        <ul>
+                            <li>Cédula de identidad del o los padres.</li>
+                            <li>Certificado de nacimiento del menor para asignación familiar.</li>
+                            <li>Datos del acompañante mayor de edad a cargo.</li>
+                            <li>Información del viaje (país/fecha de ida y regreso).</li>
+                        </ul>
+                        <p>Este documento se emite exclusivamente con firma electrónica y será enviado únicamente en formato digital. Para su envío, se deben proporcionar dos direcciones de correo electrónico.</p>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>AUTORIZACIÓN</h3>
+                        <p>Documento en que una persona autoriza a otra para realizar una gestión específica en su nombre.</p>
+                        <ul>
+                            <li>Cédula de identidad del autorizante.</li>
+                            <li>Datos de la persona autorizada.</li>
+                            <li>Indicar claramente la gestión a realizar.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CARTA PODER VEHÍCULO</h3>
+                        <p>Documento que permite a un tercero realizar trámites relacionados con un vehículo (comprar, vender, retiro de corrales, trámites en registro civil, etc.).</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Certificado de Anotaciones Vigentes con fecha del mismo día en que vine a firmar (solicitar en Registro Civil o registrocivil.cl).</li>
+                            <li>Datos de la persona a la que se otorga el poder.</li>
+                        </ul>
+                        <p>Este documento se emite exclusivamente con firma electrónica y será enviado únicamente en formato digital. Para su envío, se deben proporcionar dos direcciones de correo electrónico.</p>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CARTA TÉRMINO DE CONTRATO</h3>
+                        <p>Documento que formaliza el término de una relación contractual (arriendo u otro).</p>
+                        <ul>
+                            <li>Cédulas de identidad</li>
+                            <li>Datos de las partes.</li>
+                            <li>Contrato de arriendo original.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CARTA RENUNCIA</h3>
+                        <p>Documento mediante el cual un trabajador comunica su decisión de renunciar a su empleo.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Datos del empleador (Razón Social y Rut).</li>
+                            <li>Fecha de término.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CARTA PODER</h3>
+                        <p>Autorización básica para que otra persona realice trámites simples en nombre del otorgante.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Datos de la persona a la que se otorga el poder.</li>
+                            <li>Descripción de facultades.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>COMPRAVENTA PRIVADA EMBARCACIÓN</h3>
+                        <p>Contrato mediante el cual se transfiere la propiedad de una embarcación.</p>
+                        <ul>
+                            <li>Cédula de identidad de ambas partes.</li>
+                            <li>Datos de la embarcación (Certificado de Navegabilidad y/o Matricula).</li>
+                            <li>Precio y forma de pago.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>COMPRAVENTAS PRIVADAS</h3>
+                        <p>Contrato entre particulares para la compra y venta de bienes.</p>
+                        <ul>
+                            <li>Cédulas de identidad.</li>
+                            <li>Descripción del bien, incluyendo documento que acredite su dominio.</li>
+                            <li>Precio y forma de pago.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CONTRATO DE ARRIENDO CASA / LOCAL COMERCIAL</h3>
+                        <p>Contrato por el cual se entrega el uso temporal de un inmueble a cambio de un pago.</p>
+                        <ul>
+                            <li>Cédulas de identidad.</li>
+                            <li>Certificado de Dominio Vigente (máximo 60 días de vigencia, solicitar en Conservador de Bienes Raíces correspondiente)</li>
+                            <li>Canon de arriendo y plazo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CONTRATO DE ARRIENDO RURAL</h3>
+                        <p>Contrato de arriendo de predios agrícolas o rurales de una superficie mayor a 1 Hectárea.</p>
+                        <ul>
+                            <li>Cédulas de identidad. </li>
+                            <li>Certificado de Dominio Vigente (máximo 60 días de vigencia, solicitar en Conservador de Bienes Raíces correspondiente)</li>
+                            <li>Dos testigos mayores de 18 años.</li>
+                            <li>Condiciones del uso.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CONTRATO DE COMODATO</h3>
+                        <p>Préstamo gratuito de un bien para su uso por un tercero.</p>
+                        <ul>
+                            <li>Cédulas de identidad.</li>
+                            <li>Descripción del bien, incluyendo documento que acredite su dominio.</li>
+                            <li>Plazo del préstamo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>TRANSFERENCIA DE VEHÍCULO</h3>
+                        <p>Trámite para transferir la propiedad de un vehículo.</p>
+                        <ul>
+                            <li>Cédulas de identidad.</li>
+                            <li>Certificado de Anotaciones Vigentes con fecha del mismo día en que viene a firmar (solicitar en Registro Civil o registrocivil.cl).</li>
+                            <li>Certificado de Multas con fecha del mismo día en que viene a firmar (solicitar en Registro Civil o registrocivil.cl).</li>
+                            <li>Permiso de circulación vigente.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>DECLARACIÓN JURADA (SOLTERÍA, RESIDENCIA, OTRAS)</h3>
+                        <p>Documento en que una persona declara un hecho bajo su responsabilidad.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Información por declarar.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>EMPRESA EN UN DÍA</h3>
+                        <p>Sistema para constituir empresas de manera rápida mediante registro electrónico.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Número de atención.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>FINIQUITO DE TRABAJO</h3>
+                        <p>Documento mediante el cual empleador y trabajador dejan constancia del término de la relación laboral y del cumplimiento de las obligaciones derivadas de esta.</p>
+                        <ul>
+                            <li>Comparecencia del trabajador.</li>
+                            <li>Cédula de identidad vigente.</li>
+                            <li>3 copias del finiquito firmadas por el empleador.</li>
+                            <li>Últimas 3 liquidaciones de sueldo, según corresponda.</li>
+                            <li>Cotizaciones previsionales pagadas del período trabajado (pueden ser enviadas por correo electrónico).</li>
+                        </ul>
+                        <p>El trabajador debe firmar de manera voluntaria y en conocimiento del contenido del documento.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= ESCRITURAS PÚBLICAS ================= -->
+            <section class="section">
+                <h2 class="section-title">Escrituras Públicas</h2>
+
+                <div class="tramites-grid">
+
+                    <div class="tramite-card">
+                        <h3>PROTOCOLIZACIÓN</h3>
+                        <p>Incorporación de un documento privado al protocolo de la notaría, otorgándole fecha cierta.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>REDUCCIÓN A ESCRITURA PÚBLICA</h3>
+                        <p>Transformar un documento privado en escritura pública.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CESIÓN DE DERECHOS</h3>
+                        <p>Transferencia de derechos que una persona tiene sobre un bien o contrato.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>TESTAMENTOS</h3>
+                        <p>Acto mediante el cual una persona dispone de sus bienes para después de su fallecimiento. Puede ser abierto o cerrado.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado.</li>
+                            <li>Tres testigos hábiles.</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>USUFRUCTO</h3>
+                        <p>Derecho a usar y gozar un bien ajeno sin ser propietario.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>COMPRAVENTA DE INMUEBLES</h3>
+                        <p>Contrato mediante el cual se transfiere la propiedad de un bien, generalmente inmueble.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CONSTITUCIÓN DE SERVIDUMBRE</h3>
+                        <p>Derecho que permite usar parte de un terreno en beneficio de otro.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>PROMESAS DE COMPRAVENTA</h3>
+                        <p>Contrato donde las partes se obligan a celebrar una compraventa futura, una vez cumplida la condición estipulada.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>PROHIBICIONES</h3>
+                        <p>Cláusulas que limitan la disposición de un bien (por ejemplo, no vender).</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>HIPOTECAS</h3>
+                        <p>Garantía que se constituye sobre un inmueble para asegurar una deuda.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>COMODATO</h3>
+                        <p>Préstamo gratuito de un bien mediante escritura pública.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>CONTRATO DE ARRIENDO</h3>
+                        <p>Arriendo formalizado mediante escritura pública, por una superficie mayor a 1 Hectárea (no requiere de testigos).</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>ADJUDICACIÓN Y PARTICIÓN</h3>
+                        <p>Distribución de bienes entre herederos o comuneros.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>LIQUIDACIÓN SOCIEDAD CONYUGAL</h3>
+                        <p>División de bienes tras término de sociedad conyugal.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>MANDATO JUDICIAL</h3>
+                        <p>Poder otorgado a un abogado para representación en juicio.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>MANDATO ESPECIAL</h3>
+                        <p>Poder para realizar actos específicos, a nombre y cuenta del mandante.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>MANDATO GENERAL</h3>
+                        <p>Poder amplio para administrar bienes o representar a una persona.</p>
+                        <ul>
+                            <li>Cédula de identidad.</li>
+                            <li>Minuta redactada por abogado (opcional).</li>
+                            <li>Solicitar hora a través de correo electrónico.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>VIGENCIA DE MANDATO</h3>
+                        <p>Certificación de que un mandato se encuentra vigente (solicitar por correo electrónico).</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div class="tramite-card">
+                        <h3>VISITAS A DOMICILIO O EN TERRENO</h3>
+                        <p>Servicio mediante el cual el notario se traslada al domicilio, empresa o lugar donde se encuentre el solicitante, para realizar actuaciones notariales fuera de la oficina.</p>
+                        <ul>
+                            <li>Solicitud previa de atención. </li>
+                            <li>Indicar dirección exacta del lugar.</li>
+                            <li>Disponibilidad de las personas que deben firmar.</li>
+                            <li>Cédula de identidad vigente de los comparecientes.</li>
+                            <li>Documentos a firmar o información necesaria para su redacción.</li>
+                            <li>Servicio sujeto a disponibilidad y coordinación previa. </li>
+                            <li>Puede implicar costos adicionales por traslado. </li>
+                            <li>Aplica en casos como personas con movilidad reducida, empresas o situaciones especiales.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Notaría Ejemplo - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const tramites = document.querySelectorAll(".tramite-card");
+
+        searchInput.addEventListener("input", () => {
+            const filtro = searchInput.value.toLowerCase();
+
+            tramites.forEach(tramite => {
+                const texto = tramite.innerText.toLowerCase();
+
+                if (texto.includes(filtro)) {
+                    tramite.style.display = "block";
+                } else {
+                    tramite.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
