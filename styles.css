@@ -846,26 +846,75 @@ h2{
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px rgba(101, 119, 159, 0.25);
 }
+.site-main-notaria{
+    background-image: url("Carrusel/2.jpg"); /* cambia esto */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.notaria-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color:#FFF;
+}
 
-.notaria-descripcion {
-    line-height: 1.7;
+.notaria-overlay {
+    width: 100%;
+    background-color: rgba(74, 92, 130, 0.569);
+    padding: 60px 20px;
+    display: flex;
+    justify-content: left;
+}
+.notaria-box {
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 8px;
+}
+.notaria-title {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.notaria-text {
     text-align: justify;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+.notaria-text a{
+    color: #1a73e8;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px var(--color-text)
 }
 
-.notaria-descripcion p {
-    margin-bottom: 15px;
+.notaria-text p {
+    margin-bottom: 12px;
+}
+.notaria-text::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent-dark);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+.notaria-info {
+    padding-top: 15px;
 }
 
-.notaria-info h2 {
-    margin-bottom: 15px;
+.notaria-info p {
+    margin-bottom: 8px;
 }
-
-.notaria-info ul {
-    list-style: none;
-    padding: 0;
+.notaria-info p strong{
+    color: var(--color-accent)
 }
+@media (max-width: 768px) {
+    .notaria-box {
+        padding: 20px;
+    }
 
-.notaria-info li {
-    margin-bottom: 10px;
+    .notaria-overlay {
+        padding: 40px 15px;
+    }
 }
