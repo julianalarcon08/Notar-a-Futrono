@@ -14,7 +14,7 @@
 
 <body class="site-body">
 
-    <!-- ================= HEADER ================= -->
+        <!-- ================= HEADER ================= -->
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html">
@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="#contacto" class="nav-link">Contacto</a>
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
                     </li>
 
                 </ul>
@@ -51,85 +51,7 @@
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-layout">
-                <!-- IZQUIERDA -->
-                <div class="hero-left">
-                    <img src="Carrusel/LOGO NOTARÍA FUTRONO.svg" class="logo-image-hero">
-
-                    <h2 class="hero-title">Bienvenidos a Notaría Futrono</h2>
-
-                    <p class="hero-subtitle">
-                        Servicio profesional, seguro y cercano.
-                    </p>
-
-                    <div class="hero-info">
-                        <!-- TODO tu bloque de info actual -->
-                    </div>
-                </div>
-
-                <!-- DERECHA -->
-                <div class="hero-right">
-                    <div class="hero-box">
-                        <p>
-                            En nuestra notaría ofrecemos un servicio ágil, confiable y cercano, orientado a facilitar sus trámites legales de forma clara y eficiente.
-                        </p>
-
-                        <p>
-                            Contamos con experiencia en redacción, revisión y autorización de documentos, brindando asesoría personalizada y seguridad jurídica en cada proceso.
-                        </p>
-
-                        <p>
-                            Realizamos trámites como declaraciones juradas, poderes, contratos, autorizaciones y escrituras públicas, entre otros.
-                        </p>
-
-                        <p>
-                            Puede revisar nuestros trámites disponibles o solicitar hora para una atención más rápida.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= MAIN ================= -->
     <main class="site-main">
-
-        <div class="content-wrapper">
-
-        <!-- Imágenes Links -->
-        <section class="section section-links">
-            <div class="image-links-grid">
-
-                <a href="tramites.html" class="image-card">
-                    <img src="Carrusel/1.jpg" alt="Trámites">
-                    <div class="overlay">
-                        <h3>Trámites</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-
-                <a href="#tarifas" class="image-card">
-                    <img src="Carrusel/2.jpg" alt="Tarifas">
-                    <div class="overlay">
-                        <h3>Tarifas</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-
-                <a href="#indices" class="image-card">
-                    <img src="Carrusel/3.jpg" alt="Índices">
-                    <div class="overlay">
-                        <h3>Índices</h3>
-                        <span class="overlay-button">Saber más</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección Preguntas Frecuentes-->
         <section id="preguntas" class="section section-faq">
             <h2 class="faq-title">PREGUNTAS FRECUENTES</h2>
 
@@ -354,107 +276,6 @@
             </div>
 
         </section>
-
-        <!-- Sección Contacto -->
-        <section id="contacto" class="section section-contact">
-
-            <h2 class="section-title">Contacto</h2>
-
-            <div class="contact-grid">
-
-                <!-- Columna 1: Información -->
-                <div class="contact-info">
-
-                    <h3>Dirección</h3>
-                    <p>Los Carrera 17, Futrono</p>
-
-                    <h3>Teléfono</h3>
-                    <p>+56 9 7452 5700</p>
-
-                    <h3>Correo Electrónico</h3>
-                    <p>notariafutrono.interino@gmail.com</p>
-
-                    <h3>Horario de Atención</h3>
-                    <p>Lunes a Viernes<br>09:00 - 14:00, 15:00 - 17:00</p>
-
-                </div>
-
-                <!-- Columna 2: Formulario -->
-                <div class="contact-form-wrapper">
-
-                    <form 
-                        class="contact-form" 
-                        action="https://formspree.io/f/xvzbejqe" 
-                        method="POST"
-                    >
-
-                        <!-- Asunto personalizado -->
-                        <input type="hidden" name="_subject" value="Nuevo mensaje desde la web Notaría">
-
-                        <!-- Redirección opcional después de enviar -->
-                        <!-- <input type="hidden" name="_next" value="https://tusitio.cl/gracias.html"> -->
-
-                        <!-- Honeypot anti-spam -->
-                        <input type="text" name="_honey" style="display:none">
-
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="nombre"
-                                class="form-input"
-                                required
-                                autocomplete="name"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email"
-                                class="form-input"
-                                required
-                                autocomplete="email"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea 
-                                id="message" 
-                                name="mensaje"
-                                class="form-textarea"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button type="submit" class="form-button">
-                            Enviar Consulta
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-            <!-- Mapa debajo (opcional más institucional) -->
-            <div class="contact-map">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d762.6371500582061!2d-72.39098183385522!3d-40.13006205214784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961697001fea49ed%3A0x6ba64f70859dfc7d!2sNOTARIA!5e0!3m2!1ses-419!2scl!4v1772663323913!5m2!1ses-419!2scl"
-                    width="100%" 
-                    height="350" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-
-        </section>
-        </div>
     </main>
 
 
@@ -464,28 +285,6 @@
             <p class="footer-text">© 2026 Notaría Ejemplo - Todos los derechos reservados</p>
         </div>
     </footer>
-
-    <script>
-        const toggle = document.querySelector(".menu-toggle");
-        const nav = document.getElementById("mainNav");
-
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("active");
-            toggle.classList.toggle("active");
-        });
-    </script>
-
-    <script>
-        const dropdownToggle = document.querySelector(".dropdown-toggle");
-        const dropdown = document.querySelector(".dropdown");
-
-        dropdownToggle.addEventListener("click", (e) => {
-            if (window.innerWidth < 900) {
-                e.preventDefault();
-                dropdown.classList.toggle("active");
-            }
-        });
-    </script>
 
     <script>
         const faqItems = document.querySelectorAll(".faq-item");

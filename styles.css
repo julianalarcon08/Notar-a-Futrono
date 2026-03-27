@@ -265,6 +265,34 @@ h2{
     margin-bottom: 25px;
 }
 
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+}
+
+.hero-box {
+    background: transparent;
+    border-left: 3px solid #c5a46d;
+    padding-left: 20px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.hero-box p {
+    margin-bottom: 12px;
+    color: #FFF; /* mucho mejor contraste */
+}
+
 .hero-info {
     margin-top: 35px;
     display: flex;
@@ -371,6 +399,20 @@ h2{
     .hero-title{
         font-size: 2rem;
     }
+
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-box {
+        margin-top: 20px;
+    }
+
     .hero-info {
         flex-direction: column;
         align-items: center;
@@ -425,15 +467,16 @@ h2{
     background: var(--color-white);
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .section-faq::before {
     content: "?";
     position: absolute;
-    font-size: 400px;
+    font-size: 800px;
     font-weight: 700;
 
-    top: 50%;
+    top: 30%;
     right: -60px;
     transform: translateY(-50%);
 
@@ -768,6 +811,14 @@ h2{
     margin: 5px 0;
     
     color: var(--color-text-light);
+}
+.tramite-card a {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+.tramite-card a:hover {
+    text-decoration: none;
 }
 
 .tramites-search {
