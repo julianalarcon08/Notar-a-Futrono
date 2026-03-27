@@ -521,6 +521,17 @@
         </div>
     </footer>
 
+
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.getElementById("mainNav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+    </script>
+
     <script>
         const searchInput = document.getElementById("searchInput");
         const tramites = document.querySelectorAll(".tramite-card");
@@ -537,6 +548,25 @@
                     tramite.style.display = "none";
                 }
             });
+        });
+    </script>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector(".site-header");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                // bajando
+                header.classList.add("hidden");
+            } else {
+                // subiendo
+                header.classList.remove("hidden");
+            }
+
+            lastScroll = currentScroll;
         });
     </script>
 </body>

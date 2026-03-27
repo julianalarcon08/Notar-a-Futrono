@@ -38,7 +38,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link">Nuestra notaría</a>
+                        <a href="notaria.html" class="nav-link">Nuestra notaría</a>
                     </li>
 
                     <li class="nav-item">
@@ -63,10 +63,6 @@
                     <p class="hero-subtitle">
                         Servicio profesional, seguro y cercano.
                     </p>
-
-                    <div class="hero-info">
-                        <!-- TODO tu bloque de info actual -->
-                    </div>
                 </div>
 
                 <!-- DERECHA -->
@@ -111,10 +107,10 @@
                     </div>
                 </a>
 
-                <a href="#tarifas" class="image-card">
-                    <img src="Carrusel/2.jpg" alt="Tarifas">
+                <a href="faq.html" class="image-card">
+                    <img src="Carrusel/2.jpg" alt="Faq">
                     <div class="overlay">
-                        <h3>Tarifas</h3>
+                        <h3>Preguntas frecuentes</h3>
                         <span class="overlay-button">Saber más</span>
                     </div>
                 </a>
@@ -496,6 +492,25 @@
             question.addEventListener("click", () => {
                 item.classList.toggle("active");
             });
+        });
+    </script>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector(".site-header");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                // bajando
+                header.classList.add("hidden");
+            } else {
+                // subiendo
+                header.classList.remove("hidden");
+            }
+
+            lastScroll = currentScroll;
         });
     </script>
 </body>
