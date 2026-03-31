@@ -930,3 +930,55 @@ h2{
         padding: 40px 15px;
     }
 }
+
+.footer-links {
+    max-width: 80%;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+
+.footer-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px; 
+    justify-content: center;
+}
+
+.footer-links-list li {
+    width: auto;
+}
+
+.footer-links-list a {
+    text-decoration: none;
+    color: #ddd;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    white-space: nowrap; /* evita que se corten en 2 líneas */
+}
+
+.footer-links-list a:hover {
+    color: white;
+}
+
+.footer-links-list i {
+    font-size: 14px;
+}
+.footer-links-list i{
+    color: var(--color-accent-dark)
+}
+@media (max-width: 768px) {
+    .footer-links-list {
+        flex-direction: column;
+    }
+}
