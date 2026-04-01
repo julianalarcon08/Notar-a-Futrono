@@ -574,6 +574,12 @@ h2{
     background: var(--color-white);
 }
 
+.section-contact a{
+    text-shadow: 1px 1px 1px var(--color-text-light);
+    text-decoration: underline;
+    color: var(--color-text-light)
+}
+
 .section-contact {
     position: relative;
     overflow: hidden;
