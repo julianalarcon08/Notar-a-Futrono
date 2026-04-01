@@ -242,6 +242,9 @@ h2{
     padding: 100px 20px;
     text-align: center;
     color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 .hero-section a{
     color: white;
@@ -991,6 +994,10 @@ h2{
 }
 .footer-links-list i{
     color: var(--color-accent-dark)
+}
+#footer-img{
+    justify-self: center;
+    align-self: center;
 }
 @media (max-width: 768px) {
     .footer-links-list {
