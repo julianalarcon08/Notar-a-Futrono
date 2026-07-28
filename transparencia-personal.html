@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Notaría Futrono</title>
+    <title>Personal - Transparencia - Notaría Futrono</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notaría Futrono">
+    <meta name="description" content="Listado del personal de la Notaría Futrono, conforme a la Ley N° 21.772.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/Carrusel/LOGO NOTARÍA FUTRONO.svg" type="image/png">
@@ -29,77 +29,106 @@
 
             <nav class="main-navigation" id="mainNav">
                 <ul class="nav-list">
-
                     <li class="nav-item">
                         <a href="tramites.html" class="nav-link">Trámites</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="faq.html" class="nav-link">Preguntas frecuentes</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="notaria.html" class="nav-link">Nuestra notaría</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="transparencia.html" class="nav-link">Transparencia</a>
                     </li>
-
                     <li class="nav-item">
                         <a href="index.html#contacto" class="nav-link">Contacto</a>
                     </li>
-
                 </ul>
             </nav>
-
         </div>
     </header>
 
-    <main class="site-main-notaria">
-        <section class="notaria-hero">
-
-            <div class="notaria-overlay">
-
-                <div class="notaria-box">
-                    <img src="Carrusel/LOGO NOTARÍA FUTRONO.svg" class="logo-image-hero">
-                    <h2 class="notaria-title">Bienvenidos a nuestra Notaría</h2>
-                    <p class="hero-subtitle">Notaria: Gisele Henríquez</p>
-                    <div class="notaria-text">
-                        <p>
-                            En nuestra notaría ofrecemos un servicio ágil, confiable y cercano, orientado a facilitar la realización de sus trámites legales de manera clara y eficiente.
-                        </p>
-
-                        <p>
-                            Contamos con experiencia en la redacción, revisión y autorización de documentos, brindando asesoría personalizada para que cada trámite se realice conforme a la normativa vigente y con total seguridad jurídica.
-                        </p>
-
-                        <p>
-                            Ponemos a su disposición una amplia gama de servicios, tales como declaraciones juradas, poderes, contratos, autorizaciones, compraventas y escrituras públicas, entre otros, adaptándonos a sus necesidades y entregando soluciones oportunas.
-                        </p>
-
-                        <p>
-                            Además, ofrecemos <a href="tramites.html#terreno">atención en terreno y visitas a domicilio</a>, para aquellos casos en que no sea posible asistir a nuestras oficinas.
-                        </p>
-
-                        <p>
-                            Lo invitamos a revisar nuestros <a href="tramites.html">trámites disponibles</a> y, si lo requiere, puede <a href="index.html#contacto">solicitar hora o enviar su documento</a> para revisión previa, facilitando así su atención.
-                        </p>
-                    </div>
-
-                    <div class="notaria-info">
-                        <p><strong>Teléfono:</strong> +56 9 7452 5700</p>
-                        <p><strong>Correo:</strong> contacto@notariafutrono.cl</p>
-                        <p><strong>Dirección:</strong> Los Carrera 17, Futrono</p>
-                        <p><strong>Notaria:</strong> Gisele Magdalena Henríquez Vallejos</p>
-                        <p><strong>Horario:</strong> Lunes a Viernes, 09:00 - 14:00, 15:00 - 17:00</p>
-                    </div>
-
+    <!-- ================= MAIN ================= -->
+    <main class="site-main">
+        <div class="content-wrapper">
+            <section class="section">
+                
+                <div style="margin-bottom: 25px;">
+                    <a href="transparencia.html" style="color: var(--color-primary); text-decoration: none; font-size: 0.95rem; font-weight: 600;">
+                        <i class="fa-solid fa-arrow-left"></i> Volver a Transparencia
+                    </a>
                 </div>
 
-            </div>
+                <div style="margin-bottom: 35px; border-bottom: 2px solid var(--color-primary-light); padding-bottom: 15px;">
+                    <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Ley 21.772</span>
+                    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color-primary-dark); margin-top: 5px;">
+                        Nómina de Personal
+                    </h1>
+                    <p style="color: var(--color-text-light); margin-top: 8px; font-size: 1.05rem;">
+                        Listado del personal de la notaría con indicación de sus funciones y cargos, conforme a la Ley 21.772.
+                    </p>
+                </div>
 
-        </section>
+                <!-- Banner Informativo -->
+                <div class="alert-box info-amber">
+                    <div style="flex-shrink: 0;">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.95rem; margin: 0; line-height: 1.5; color: #B06000;">
+                            Esta información es publicada en cumplimiento de la Ley N° 21.772 sobre Transparencia y Publicidad del Sistema Notarial y Registral de Chile.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tabla del Personal (Fácil de modificar) -->
+                <div class="table-wrapper">
+                    <table class="transparencia-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre Completo</th>
+                                <th>RUT</th>
+                                <th>Cargo / Función</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <!-- Miembro 1 -->
+                            <tr>
+                                <td data-label="#" style="color: var(--color-text-light); font-weight: 600;">1</td>
+                                <td data-label="Nombre Completo">Kuzzy Sonkoy Velásquez Henríquez</td>
+                                <td data-label="RUT">19.803.581-5</td>
+                                <td data-label="Cargo / Función">Administrativa</td>
+                            </tr>
+
+                            <!-- Miembro 2 -->
+                            <tr>
+                                <td data-label="#">2</td>
+                                <td data-label="Nombre Completo">Sindy Nicole Andriee Suazo Poveda</td>
+                                <td data-label="RUT">16.906.057-6</td>
+                                <td data-label="Cargo / Función">Administrativa</td>
+                            </tr>
+
+                            <!-- Miembro 3 -->
+                            <tr>
+                                <td data-label="#">3</td>
+                                <td data-label="Nombre Completo">María Cristina Hernández Ulloa</td>
+                                <td data-label="RUT">17.512.946-4</td>
+                                <td data-label="Cargo / Función">Auxiliar de Aseo y limpieza</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic; margin-top: 15px;">
+                    * Información actualizada mensualmente conforme a las disposiciones de la Ley N° 21.772.
+                </p>
+
+            </section>
+        </div>
     </main>
 
     <!-- ================= FOOTER ================= -->
@@ -120,7 +149,6 @@
                     <li><a href="https://www.bcentral.cl/inicio"><i class="fas fa-coins"></i> Valor UF y dólar</a></li>
                     <li><a href="https://notariosyconservadores.cl"><i class="fas fa-landmark"></i> Notarios y Conservadores</a></li>
                 </ul>
-
             </div>
         </div>
     </footer>
@@ -143,15 +171,13 @@
             const currentScroll = window.pageYOffset;
 
             if (currentScroll > lastScroll && currentScroll > 50) {
-                // bajando
                 header.classList.add("hidden");
             } else {
-                // subiendo
                 header.classList.remove("hidden");
             }
-
             lastScroll = currentScroll;
         });
     </script>
 
 </body>
+</html>

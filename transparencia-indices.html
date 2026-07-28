@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Índice de Escrituras Públicas - Transparencia - Notaría Futrono</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Copia electrónica del índice de escrituras públicas de la Notaría Futrono, conforme a la Ley N° 21.772.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/Carrusel/LOGO NOTARÍA FUTRONO.svg" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Questrial&display=swap" rel="stylesheet">
+</head>
+
+<body class="site-body">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html">
+                <img src="Carrusel/LOGO NOTARÍA FUTRONO.svg" alt="Logo Notaría" class="logo-image">
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-navigation" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="tramites.html" class="nav-link">Trámites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="notaria.html" class="nav-link">Nuestra notaría</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="transparencia.html" class="nav-link">Transparencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="site-main">
+        <div class="content-wrapper">
+            <section class="section">
+                
+                <div style="margin-bottom: 25px;">
+                    <a href="transparencia.html" style="color: var(--color-primary); text-decoration: none; font-size: 0.95rem; font-weight: 600;">
+                        <i class="fa-solid fa-arrow-left"></i> Volver a Transparencia
+                    </a>
+                </div>
+
+                <div style="margin-bottom: 35px; border-bottom: 2px solid var(--color-primary-light); padding-bottom: 15px;">
+                    <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Ley 21.772</span>
+                    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--color-primary-dark); margin-top: 5px;">
+                        Índice de Escrituras Públicas
+                    </h1>
+                    <p style="color: var(--color-text-light); margin-top: 8px; font-size: 1.05rem;">
+                        Copia electrónica del índice de escrituras públicas y documentos protocolizados, actualizado mensualmente conforme a la Ley N° 21.772.
+                    </p>
+                </div>
+
+                <!-- Buscador de Índices -->
+                <div class="search-box">
+                    <h2>Búsqueda en índice electrónico</h2>
+                    <form id="indicesSearchForm" class="search-form">
+                        <div class="form-group group-year">
+                            <label for="searchYear">Año <span style="color: var(--color-primary); font-weight: bold;">*</span></label>
+                            <input type="number" id="searchYear" placeholder="2026" min="1900" max="2100" required value="2026">
+                        </div>
+                        <div class="form-group group-name">
+                            <label for="searchName">Nombre compareciente</label>
+                            <input type="text" id="searchName" placeholder="Ej: Juan Pérez Torres">
+                        </div>
+                        <button type="submit" class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                        </button>
+                    </form>
+
+                    <!-- Div para mostrar resultados de búsqueda interactiva mediante JS -->
+                    <div id="searchResults" style="margin-top: 20px; display: none;"></div>
+                </div>
+
+                <!-- Descarga de PDF de Índices Mensuales -->
+                <div style="margin-top: 45px;">
+                    <h2 style="font-family: 'Questrial', sans-serif; font-size: 1.3rem; color: var(--color-primary-dark); font-weight: 600; margin-bottom: 20px; border-bottom: 1px solid var(--color-border); padding-bottom: 10px;">
+                        Índices en PDF
+                    </h2>
+                    
+                    <!-- Año 2026 -->
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--color-primary-dark); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                            <span style="display: inline-block; width: 4px; height: 24px; background: var(--color-primary); border-radius: 2px;"></span>
+                            2026
+                        </h3>
+
+                        <div class="table-wrapper">
+                            <table class="transparencia-table">
+                                <thead>
+                                    <tr style="background-color: var(--color-background); border-bottom: 1px solid var(--color-border);">
+                                        <th style="color: var(--color-text); padding: 12px 20px;">Mes</th>
+                                        <th style="color: var(--color-text); padding: 12px 20px;">Tipo de Documento</th>
+                                        <th style="color: var(--color-text); padding: 12px 20px;">Fecha Publicación</th>
+                                        <th style="color: var(--color-text); padding: 12px 20px; text-align: right;">Descarga</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <!-- NOTA: Puedes duplicar o modificar esta fila para añadir más meses -->
+                                    <tr>
+                                        <td data-label="Mes" style="font-weight: 600;">Enero</td>
+                                        <td data-label="Tipo de Documento" style="color: var(--color-text-light);">Escrituras y Protocolizados</td>
+                                        <td data-label="Fecha Publicación" style="color: var(--color-text-light);">Julio 2026</td>
+                                        <td data-label="Descarga" style="text-align: right;">
+                                            <a href="indices_enero_2026_placeholder.pdf" target="_blank" class="download-btn" style="padding: 6px 12px; font-size: 0.8rem;">
+                                                <i class="fa-solid fa-file-pdf"></i> PDF
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <img id="footer-img" class="logo-image-hero" src="Carrusel/LOGO NOTARÍA FUTRONO.svg">
+            <div class="footer-links">
+                <h2 class="footer-title">Links de interés</h2>
+                <ul class="footer-links-list">
+                    <li><a href="https://wa.me/message/VOYNBCRUXKW7G1"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://notariosyconservadores.cl/wp-content/uploads/2026/02/TURNOS.pdf"><i class="fas fa-balance-scale"></i> Notarías de Turno</a></li>
+                    <li><a href="https://www.registrocivil.cl"><i class="fas fa-id-card"></i> Certificados Registro Civil</a></li>
+                    <li><a href="https://zeus.sii.cl/avalu_cgi/br/brc110.sh"><i class="fas fa-home"></i> Avalúo Fiscal Inmuebles</a></li>
+                    <li><a href="https://www.tgr.cl/tramites-tgr/certificado-de-deuda-de-contribuciones/"><i class="fas fa-file-invoice-dollar"></i> Deuda Impuesto Territorial</a></li>
+                    <li><a href="https://www.sii.cl/servicios_online/1049-.html"><i class="fas fa-car"></i> Tasación de Vehículos</a></li>
+                    <li><a href="https://www.fojas.cl/index2.php"><i class="fas fa-shield-alt"></i> Verificación Firma Electrónica</a></li>
+                    <li><a href="https://www.diariooficial.interior.gob.cl/#close"><i class="fas fa-newspaper"></i> Diario Oficial</a></li>
+                    <li><a href="https://www.bcentral.cl/inicio"><i class="fas fa-coins"></i> Valor UF y dólar</a></li>
+                    <li><a href="https://notariosyconservadores.cl"><i class="fas fa-landmark"></i> Notarios y Conservadores</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.getElementById("mainNav");
+
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector(".site-header");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 50) {
+                header.classList.add("hidden");
+            } else {
+                header.classList.remove("hidden");
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+
+    <!-- JS de simulación de búsqueda de índices -->
+    <script>
+        const searchForm = document.getElementById("indicesSearchForm");
+        const resultsDiv = document.getElementById("searchResults");
+
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const year = document.getElementById("searchYear").value;
+            const name = document.getElementById("searchName").value.trim();
+
+            resultsDiv.style.display = "block";
+            resultsDiv.innerHTML = `
+                <div style="text-align:center; padding: 20px;">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: 10px;"></i>
+                    <p style="font-size: 0.95rem; color: var(--color-text-light);">Buscando en el índice del año ${year}...</p>
+                </div>
+            `;
+
+            setTimeout(() => {
+                if (year === "2026") {
+                    if (name !== "") {
+                        resultsDiv.innerHTML = `
+                            <div class="alert-box info-amber" style="margin-bottom:0;">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <div>
+                                    <p>No se encontraron escrituras públicas para el compareciente <strong>"${name}"</strong> en el año 2026.</p>
+                                    <p style="font-size:0.85rem; margin-top:5px; color: var(--color-text-light);">
+                                        * El índice digital del mes corriente puede tardar hasta los primeros 5 días hábiles del mes siguiente en cargarse.
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        resultsDiv.innerHTML = `
+                            <div class="alert-box info-blue" style="margin-bottom:0;">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <div>
+                                    <p>Índice del año 2026 inicializado correctamente. Ingrese un nombre de compareciente para realizar la consulta en los registros.</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    resultsDiv.innerHTML = `
+                        <div class="alert-box info-amber" style="margin-bottom:0;">
+                            <i class="fa-solid fa-circle-xmark" style="color: #c53030;"></i>
+                            <div>
+                                <p style="color: #c53030; font-weight: 600;">Índice no cargado</p>
+                                <p style="font-size:0.9rem;">El índice digital en línea para el año <strong>${year}</strong> no se encuentra disponible. Por favor, consulte los índices en PDF de forma mensual o visítenos en la notaría.</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            }, 800);
+        });
+    </script>
+
+</body>
+</html>
