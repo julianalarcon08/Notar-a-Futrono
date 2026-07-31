@@ -116,7 +116,6 @@
                                 </thead>
                                 <tbody>
                                     
-                                    <!-- NOTA: Puedes duplicar o modificar esta fila para añadir más meses -->
                                     <tr>
                                         <td data-label="Mes" style="font-weight: 600;">Enero</td>
                                         <td data-label="Tipo de Documento" style="color: var(--color-text-light);">Escrituras y Protocolizados</td>
@@ -186,62 +185,280 @@
         });
     </script>
 
-    <!-- JS de simulación de búsqueda de índices -->
+    <!-- JS del Buscador de Índices Real -->
     <script>
-        const searchForm = document.getElementById("indicesSearchForm");
-        const resultsDiv = document.getElementById("searchResults");
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchForm = document.getElementById("indicesSearchForm");
+            const resultsDiv = document.getElementById("searchResults");
+            const cacheIndices = {};
 
-        searchForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const year = document.getElementById("searchYear").value;
-            const name = document.getElementById("searchName").value.trim();
+            // Normaliza texto para búsqueda tolerante (sin acentos, sin eñes especiales, en minúsculas)
+            function normalizarTexto(texto) {
+                return texto.toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "") // Remueve acentos
+                    .trim();
+            }
 
-            resultsDiv.style.display = "block";
-            resultsDiv.innerHTML = `
-                <div style="text-align:center; padding: 20px;">
-                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: 10px;"></i>
-                    <p style="font-size: 0.95rem; color: var(--color-text-light);">Buscando en el índice del año ${year}...</p>
-                </div>
-            `;
+            async function obtenerIndices(year) {
+                if (cacheIndices[year]) {
+                    return cacheIndices[year];
+                }
+                
+                const response = await fetch(`indices-json/indices-${year}.json`);
+                if (!response.ok) {
+                    throw new Error(`No se encontró el índice del año ${year}`);
+                }
+                const data = await response.json();
+                cacheIndices[year] = data;
+                return data;
+            }
 
-            setTimeout(() => {
-                if (year === "2026") {
-                    if (name !== "") {
+            searchForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const year = document.getElementById("searchYear").value;
+                const nameInput = document.getElementById("searchName").value;
+                const nameSearch = normalizarTexto(nameInput);
+
+                resultsDiv.style.display = "block";
+                resultsDiv.innerHTML = `
+                    <div style="text-align:center; padding: 30px;">
+                        <i class="fa-solid fa-spinner fa-spin" style="font-size: 1.8rem; color: var(--color-primary); margin-bottom: 12px;"></i>
+                        <p style="font-size: 0.95rem; color: var(--color-text-light);">Buscando en los registros del año ${year}...</p>
+                    </div>
+                `;
+
+                try {
+                    const indices = await obtenerIndices(year);
+                    
+                    // Si la búsqueda es vacía, mostramos los primeros 100 registros
+                    let resultados = [];
+                    if (nameSearch === "") {
+                        resultados = indices;
+                    } else {
+                        // Filtrar coincidencias
+                        resultados = indices.filter(reg => {
+                            const c1Norm = normalizarTexto(reg.c1);
+                            const c2Norm = normalizarTexto(reg.c2);
+                            const matNorm = normalizarTexto(reg.materia);
+                            
+                            return c1Norm.includes(nameSearch) || c2Norm.includes(nameSearch) || matNorm.includes(nameSearch);
+                        });
+                    }
+
+                    if (resultados.length === 0) {
                         resultsDiv.innerHTML = `
                             <div class="alert-box info-amber" style="margin-bottom:0;">
                                 <i class="fa-solid fa-circle-exclamation"></i>
                                 <div>
-                                    <p>No se encontraron escrituras públicas para el compareciente <strong>"${name}"</strong> en el año 2026.</p>
-                                    <p style="font-size:0.85rem; margin-top:5px; color: var(--color-text-light);">
-                                        * El índice digital del mes corriente puede tardar hasta los primeros 5 días hábiles del mes siguiente en cargarse.
-                                    </p>
+                                    <p style="font-weight:600; margin-bottom: 4px;">Sin coincidencias</p>
+                                    <p style="font-size: 0.9rem;">No se encontraron registros de escrituras que coincidan con <strong>"${nameInput}"</strong> en el año <strong>${year}</strong>.</p>
                                 </div>
                             </div>
                         `;
-                    } else {
-                        resultsDiv.innerHTML = `
-                            <div class="alert-box info-blue" style="margin-bottom:0;">
-                                <i class="fa-solid fa-circle-info"></i>
-                                <div>
-                                    <p>Índice del año 2026 inicializado correctamente. Ingrese un nombre de compareciente para realizar la consulta en los registros.</p>
-                                </div>
-                            </div>
-                        `;
+                        return;
                     }
-                } else {
+
+                    // Limitar los resultados que renderizamos para optimizar rendimiento
+                    const maxMostrar = 150;
+                    const registrosAMostrar = resultados.slice(0, maxMostrar);
+                    
+                    let htmlTabla = `
+                        <div style="margin-top: 25px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 15px; flex-wrap:wrap; gap:10px;">
+                                <p style="font-size:0.9rem; color: var(--color-text-light); margin:0;">
+                                    Se encontraron <strong>${resultados.length}</strong> registros. 
+                                    ${resultados.length > maxMostrar ? `Mostrando los primeros ${maxMostrar}.` : ""}
+                                </p>
+                            </div>
+                            <div class="table-wrapper">
+                                <table class="transparencia-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rep.</th>
+                                            <th>Fecha / Mes</th>
+                                            <th>Comparecientes / Contratantes</th>
+                                            <th>Materia / Acto</th>
+                                            <th>Fojas</th>
+                                            <th style="text-align:right;">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                    `;
+
+                    registrosAMostrar.forEach(reg => {
+                        const partes = reg.c2 ? `${reg.c1} / ${reg.c2}` : reg.c1;
+                        const partesEscapadas = partes.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                        const materiaEscapada = reg.materia.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                        
+                        htmlTabla += `
+                            <tr>
+                                <td data-label="Rep." style="font-weight:600; color: var(--color-primary-dark);">${reg.repertorio}</td>
+                                <td data-label="Fecha / Mes" style="color: var(--color-text-light); text-transform: capitalize; font-size: 0.85rem;">${(reg.mes || "").toLowerCase()}</td>
+                                <td data-label="Comparecientes" style="font-weight: 500;">${partes}</td>
+                                <td data-label="Materia">${reg.materia}</td>
+                                <td data-label="Fojas" style="color: var(--color-text-light);">${reg.fojas || "-"}</td>
+                                <td data-label="Acción" style="text-align: right;">
+                                    <a href="javascript:void(0)" onclick="abrirSolicitud('${year}', '${reg.repertorio}', '${materiaEscapada}', '${partesEscapadas}')" class="download-btn" style="padding: 6px 12px; font-size: 0.8rem; background: var(--color-primary-dark);">
+                                        <i class="fa-solid fa-file-signature"></i> Solicitar copia
+                                    </a>
+                                </td>
+                            </tr>
+                        `;
+                    });
+
+                    htmlTabla += `
+                                    </tbody>
+                                </table>
+                            </div>
+                            ${resultados.length > maxMostrar ? `
+                                <p style="font-size:0.85rem; color: var(--color-text-light); text-align:center; font-style:italic; margin-top:-10px; margin-bottom:15px;">
+                                    * Escriba un nombre más específico (ej: primer y segundo apellido) para filtrar los resultados.
+                                </p>
+                            ` : ""}
+                        </div>
+                    `;
+
+                    resultsDiv.innerHTML = htmlTabla;
+
+                } catch (error) {
+                    console.error(error);
                     resultsDiv.innerHTML = `
                         <div class="alert-box info-amber" style="margin-bottom:0;">
                             <i class="fa-solid fa-circle-xmark" style="color: #c53030;"></i>
                             <div>
-                                <p style="color: #c53030; font-weight: 600;">Índice no cargado</p>
-                                <p style="font-size:0.9rem;">El índice digital en línea para el año <strong>${year}</strong> no se encuentra disponible. Por favor, consulte los índices en PDF de forma mensual o visítenos en la notaría.</p>
+                                <p style="color: #c53030; font-weight: 600;">Índice no disponible</p>
+                                <p style="font-size:0.9rem;">El índice digital para el año <strong>${year}</strong> aún no se encuentra digitalizado en línea. Por favor consulte las descargas de índices en PDF o visítenos en la notaría.</p>
                             </div>
                         </div>
                     `;
                 }
-            }, 800);
+            });
+
+            // Lógica de control de la ventana modal
+            const modal = document.getElementById("solicitudModal");
+            const btnCerrar = document.querySelector(".close-modal");
+            const solicitudForm = document.getElementById("solicitudForm");
+            
+            window.abrirSolicitud = function(year, repertorio, materia, partes) {
+                // Rellenar resumen en pantalla
+                document.getElementById("resumenAnio").innerText = year;
+                document.getElementById("resumenRepertorio").innerText = repertorio;
+                document.getElementById("resumenMateria").innerText = materia;
+                document.getElementById("resumenPartes").innerText = partes;
+                
+                // Rellenar campos ocultos del formulario para el envío posterior
+                document.getElementById("formAnio").value = year;
+                document.getElementById("formRepertorio").value = repertorio;
+                document.getElementById("formMateria").value = materia;
+                document.getElementById("formPartes").value = partes;
+                
+                // Mostrar el modal
+                modal.classList.add("active");
+            }
+            
+            btnCerrar.addEventListener("click", () => {
+                modal.classList.remove("active");
+            });
+            
+            // Cerrar al hacer clic fuera del contenido del modal
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove("active");
+                }
+            });
+
+            // Envío asíncrono vía fetch para evitar ser bloqueado/borrado por el antivirus
+            solicitanteForm = document.getElementById("solicitudForm");
+            solicitanteForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                const btnEnviar = solicitanteForm.querySelector("button[type='submit']");
+                const originalBtnHTML = btnEnviar.innerHTML;
+                btnEnviar.disabled = true;
+                btnEnviar.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Enviando...`;
+                
+                // Obtener datos del formulario
+                const formData = new FormData(solicitanteForm);
+                const data = {};
+                formData.forEach((value, key) => data[key] = value);
+                
+                try {
+                    const response = await fetch("https://submit-form.com/GzHp7w8go", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    if (response.ok) {
+                        alert("Solicitud de copia enviada con éxito. La notaría se contactará con usted a la brevedad.");
+                        modal.classList.remove("active");
+                        solicitanteForm.reset();
+                    } else {
+                        throw new Error("Error en respuesta de Formspark");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Hubo un problema al enviar la solicitud. Por favor contáctenos a contacto@notariafutrono.cl");
+                } finally {
+                    btnEnviar.disabled = false;
+                    btnEnviar.innerHTML = originalBtnHTML;
+                }
+            });
         });
     </script>
+
+    <!-- Modal de Solicitud de Escritura (Enviado al correo de la notaría de forma asíncrona) -->
+    <div id="solicitudModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Solicitar Copia de Escritura</h2>
+            <p class="modal-subtitle">Complete los datos a continuación para enviar la solicitud de copia a la notaría.</p>
+            
+            <div class="escritura-resumen">
+                <p><strong>Año:</strong> <span id="resumenAnio">-</span></p>
+                <p><strong>N° Repertorio:</strong> <span id="resumenRepertorio">-</span></p>
+                <p><strong>Materia:</strong> <span id="resumenMateria">-</span></p>
+                <p><strong>Comparecientes:</strong> <span id="resumenPartes">-</span></p>
+            </div>
+            
+            <form id="solicitudForm">
+                <!-- Inputs ocultos con datos del documento -->
+                <input type="hidden" name="escritura_anio" id="formAnio">
+                <input type="hidden" name="escritura_repertorio" id="formRepertorio">
+                <input type="hidden" name="escritura_materia" id="formMateria">
+                <input type="hidden" name="escritura_comparecientes" id="formPartes">
+                <input type="hidden" name="tipo_copia" value="Simple">
+                
+                <div class="form-group-modal">
+                    <label for="solicitanteNombre">Nombre Completo <span style="color:var(--color-primary); font-weight:bold;">*</span></label>
+                    <input type="text" id="solicitanteNombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                </div>
+                
+                <div class="form-group-modal">
+                    <label for="solicitanteEmail">Correo Electrónico <span style="color:var(--color-primary); font-weight:bold;">*</span></label>
+                    <input type="email" id="solicitanteEmail" name="email" placeholder="Ej: juan@correo.com" required>
+                </div>
+                
+                <div class="form-group-modal">
+                    <label for="solicitanteFono">Teléfono de Contacto <span style="color:var(--color-primary); font-weight:bold;">*</span></label>
+                    <input type="tel" id="solicitanteFono" name="telefono" placeholder="Ej: +56 9 1234 5678" required>
+                </div>
+                
+                <div class="form-group-modal">
+                    <label for="solicitanteMensaje">Observaciones / Indicaciones adicionales</label>
+                    <textarea id="solicitanteMensaje" name="mensaje" placeholder="Indique si necesita retirar en oficina física o recibir por correo digital, o cualquier otro detalle..."></textarea>
+                </div>
+                
+                <button type="submit" class="transparencia-button" style="width: 100%; border: none; cursor: pointer; margin-top: 15px;">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Solicitud de Copia
+                </button>
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>

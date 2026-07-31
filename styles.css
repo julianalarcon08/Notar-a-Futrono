@@ -1520,3 +1520,154 @@ h2{
     color: var(--color-text);
     margin-top: 2px;
 }
+
+/* Modal de Solicitud de Escrituras */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10000; /* Asegurar que quede sobre todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px); /* Difuminado premium */
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal.active {
+    display: flex; /* Mostrar como flex para centrar */
+}
+
+.modal-content {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: color 0.2s;
+    font-weight: 300;
+}
+
+.close-modal:hover {
+    color: var(--color-primary-dark);
+}
+
+.modal-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.escritura-resumen {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+}
+
+.escritura-resumen p {
+    margin: 0;
+    margin-bottom: 6px;
+    color: var(--color-text);
+}
+
+.escritura-resumen p:last-child {
+    margin-bottom: 0;
+}
+
+.form-group-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.form-group-modal label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-group-modal input[type="text"],
+.form-group-modal input[type="email"],
+.form-group-modal input[type="tel"],
+.form-group-modal textarea {
+    height: 42px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font-family: inherit;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.form-group-modal textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.form-group-modal input:focus,
+.form-group-modal textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: normal !important;
+}
+
+.radio-label input[type="radio"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+}
