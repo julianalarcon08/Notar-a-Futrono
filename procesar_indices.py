@@ -135,10 +135,12 @@ def procesar_excels():
             
         wb.close()
         
-        # Guardar en archivo JSON
-        output_filepath = os.path.join(output_dir, f"indices-{year}.json")
-        with open(output_filepath, "w", encoding="utf-8") as json_file:
-            json.dump(registros, json_file, ensure_ascii=False, indent=2)
+        # Guardar en archivo JS para evitar restricciones CORS locales (doble clic en el HTML)
+        output_filepath = os.path.join(output_dir, f"indices-{year}.js")
+        with open(output_filepath, "w", encoding="utf-8") as js_file:
+            js_file.write(f"window.indices_{year} = ")
+            json.dump(registros, js_file, ensure_ascii=False, indent=2)
+            js_file.write(";\n")
             
         print(f"¡Éxito! Creado '{output_filepath}' con {len(registros)} registros.")
 

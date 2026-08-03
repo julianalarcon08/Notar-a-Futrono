@@ -1,4 +1,4 @@
-[
+window.indices_2026 = [
   {
     "c1": "AGRICOLA SICHAHUE LIMITADA",
     "c2": "",
@@ -5023,4 +5023,4 @@
     "fojas": "910",
     "mes": "MAYO - JUNIO"
   }
-]
+];

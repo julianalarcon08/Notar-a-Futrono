@@ -175,6 +175,10 @@ h2{
         display: none;
     }
 
+    .header-inner {
+        max-width: 1250px;
+    }
+
     .main-navigation {
         position: static;
         background: transparent;
@@ -187,7 +191,7 @@ h2{
     .nav-list {
         flex-direction: row;
         padding: 0;
-        gap: 25px;
+        gap: 20px;
     }
 
     /* Dropdown desktop animado */
@@ -425,8 +429,16 @@ h2{
         font-size: 0.9rem;
     }
 
+    .site-main {
+        padding: 30px 10px;
+    }
+
+    .content-wrapper {
+        padding: 0 10px;
+    }
+
     .section {
-        padding: 25px;
+        padding: 20px 12px;
     }
 
         .menu-toggle {
@@ -1258,12 +1270,20 @@ h2{
 
 /* Comportamiento responsivo de la tabla para celulares */
 @media (max-width: 600px) {
+    .table-wrapper {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+    }
+
     .transparencia-table, 
     .transparencia-table tbody, 
     .transparencia-table tr, 
     .transparencia-table td {
         display: block;
         width: 100%;
+        box-sizing: border-box;
     }
     
     .transparencia-table thead {
@@ -1271,13 +1291,16 @@ h2{
     }
     
     .transparencia-table tr {
-        margin-bottom: 0px;
-        border-bottom: 2px solid var(--color-border);
-        padding: 10px 0;
+        margin-bottom: 16px;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        background: var(--color-white);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        padding: 12px 6px;
     }
     
     .transparencia-table tr:last-child {
-        border-bottom: none;
+        margin-bottom: 0;
     }
     
     .transparencia-table td {
@@ -1285,19 +1308,33 @@ h2{
         justify-content: space-between;
         align-items: flex-start;
         gap: 15px;
-        padding: 10px 15px;
+        padding: 8px 12px;
         border-top: none;
         text-align: right;
+        font-size: 0.9rem;
     }
     
     .transparencia-table td::before {
         content: attr(data-label);
         font-weight: 600;
         color: var(--color-primary-dark);
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         text-align: left;
         min-width: 110px; /* Ancho mínimo para la etiqueta de la izquierda */
         flex-shrink: 0; /* Evitar que se comprima la etiqueta */
+    }
+
+    /* Estilo apilado para celdas con textos largos en móviles */
+    .transparencia-table td.td-stack {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 4px;
+    }
+
+    .transparencia-table td.td-stack::before {
+        min-width: auto;
+        margin-bottom: 2px;
     }
 }
 

@@ -1,4 +1,4 @@
-[
+window.indices_2024 = [
   {
     "c1": "AVILÉS CÁRDENAS FLOR ESTER",
     "c2": "SERVIU",
@@ -2047,4 +2047,4 @@
     "fojas": "341",
     "mes": "NOVIEMBRE-DICIEMBRE"
   }
-]
+];

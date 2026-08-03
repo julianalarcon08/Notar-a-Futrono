@@ -1,4 +1,4 @@
-[
+window.indices_2025 = [
   {
     "c1": "ÁVILA VIDAL YOLANDA INÉS",
     "c2": "PEDRO AVILA OVANDO TRANSPORTES E.I.R.L. Y OTROS",
@@ -8175,4 +8175,4 @@
     "fojas": "1612",
     "mes": "NOVIEMBRE-DICIEMBRE"
   }
-]
+];
